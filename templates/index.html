@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive AI Chat and PDF Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive AI Chat and PDF Questions</h1>
+        
+        <!-- PDF Upload and Question Form -->
+        <section id="pdf-section">
+            <h2>Ask a Question about Your PDF</h2>
+            <form id="pdf-question-form" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="pdf-file">Upload PDF:</label>
+                    <input type="file" id="pdf-file" name="pdf" accept=".pdf" required>
+                </div>
+                <div class="input-group">
+                    <label for="question">Your Question:</label>
+                    <input type="text" id="question" name="question" placeholder="Enter your question" required>
+                </div>
+                <button type="submit">Ask</button>
+            </form>
+            <div id="pdf-answer-container">
+                <h3>AI Response:</h3>
+                <div id="pdf-answer"></div>
+            </div>
+        </section>
+        
+        <!-- Chat Interface -->
+        <section id="chat-section">
+            <h2>Chat with AI</h2>
+            <div id="chat-box">
+                <!-- Chat messages will be appended here -->
+            </div>
+            <form id="chat-form">
+                <input type="text" id="message" placeholder="Type your message..." required>
+                <button type="submit" id="send-button">Send</button>
+            </form>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
